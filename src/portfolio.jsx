@@ -228,28 +228,48 @@ useEffect(() => {
   <div className="projects-grid">
     {[
       {
-        title: "Blockchain-based Smart Contracts",
-        desc: "Deployed smart contracts on Ethereum & Polygon with backend integration using Node.js & Express.",
-        tech: ["Ethereum", "Polygon", "Node.js", "Express", "MongoDB"]
+        title: "AI-Powered ATS Platform",
+        desc: "Built an intelligent ATS tailored for CSE students. Uses a custom Hugging Face model for resume parsing & skill matching.",
+        tech: ["Hugging Face", "Python", "React", "Node.js", "Express.js", "Vite", "Render", "ML"],
+        image: "/images/atsimage.png", // add your screenshot
+        link: "https://ats-f203.onrender.com/"
       },
       {
-        title: "Task Management Web App",
-        desc: "Built a real-time task tracker with React.js & Firebase for storage, auth, and hosting.",
-        tech: ["React.js", "Firebase"]
+        title: "Tamper-Proof Digital Certificates (Blockchain)",
+        desc: "Blockchain app for tamper-proof digital certificates using Ethereum + IPFS with a modern UI for issuing & verifying.",
+        tech: ["React.js", "Solidity", "Remix", "IPFS", "Ether.js", "Smart Contracts"],
+        image: "/images/certificate.png"
       },
       {
-  title: "College Digital Notice Board App",
-  desc: "A modern mobile app that digitizes college announcements, enabling instant updates, media sharing, and secure access for students and faculty using Android Studio, Firebase, and Cloudinary.",
-  tech: ["Java", "Android Studio", "Firebase", "Cloudinary"]
-}
-,
+        title: "Interactive AI Portfolio with Resume-Based Chatbot",
+        desc: "Portfolio with an AI chatbot that answers resume-based questions using Hugging Face API, deployed on Render.",
+        tech: ["React", "Node.js", "Express.js", "Hugging Face", "Render"],
+        image: "/images/port.png",
+        link: "https://main-portfolio-s7z2.onrender.com/"
+      },
       {
-        title: "Full-Stack Web Application",
-        desc: "Developed a MERN stack web platform with responsive UI portfolio",
-        tech: [  "React", "vite","Render"]
+        title: "Weather Application",
+        desc: "Android app fetching real-time weather updates via OpenWeather API, displaying essential weather info in a clean UI.",
+        tech: ["Java", "Android Studio", "XML", "OpenWeather API"],
+        image: "/images/weatherimage.jpeg"
+      },
+      {
+        title: "Calculator App",
+        desc: "Simple Android calculator with basic arithmetic, built with Java & Android Studio.",
+        tech: ["Java", "Android Studio", "XML"],
+        image: "/images/calculator.jpeg"
+      },
+      {
+        title: "College Digital Notice Board App",
+        desc: "Android app with Firebase backend. Includes Teacher App, Student App & Admin Panel to manage teacher access.",
+        tech: ["Java", "Android Studio", "Firebase", "Cloudinary"],
+        image: "/images/noticeboard.jpg"
       }
     ].map((project, index) => (
       <div key={index} className="project-card">
+        <div className="project-image">
+          <img src={project.image} alt={project.title} />
+        </div>
         <h3>{project.title}</h3>
         <p>{project.desc}</p>
         <div className="tech-stack">
@@ -257,10 +277,16 @@ useEffect(() => {
             <span key={i} className="tech">{t}</span>
           ))}
         </div>
+        {project.link && (
+          <a href={project.link} target="_blank" rel="noopener noreferrer" className="view-project-btn">
+            View Project
+          </a>
+        )}
       </div>
     ))}
   </div>
 </section>
+
 
 
 
